@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -39,6 +41,18 @@ class RestaurantTest {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<<<<<<<<<<Calculate Order Value>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void select_menu_item_from_list_should_return_total_order_value() {
+
+        int totalOrderValue;
+        List<String> selectedMenuItems = new ArrayList<String>();
+        selectedMenuItems.add("Sweet corn soup");
+        selectedMenuItems.add("Vegetable lasagne");
+        totalOrderValue = restaurant.calculateTotalOrderValue(selectedMenuItems) ;
+        assertEquals(388,totalOrderValue);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<Calculate Order Value>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
